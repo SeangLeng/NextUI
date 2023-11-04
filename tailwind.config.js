@@ -14,6 +14,11 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        "primary-color": "#0346A5",
+        "description-color": "#636363",
+        "text-color": "#363636"
+      }
     },
   },
   plugins: [nextui()],
