@@ -1,20 +1,46 @@
 'use client'
 
+import { useGetUserQuery } from '@/store/features/user/userApiSlice';
 import { Button } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Home() {
-    const router = useRouter()
+
+    const router = useRouter();
+    const {
+        data: user,
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+    } = useGetUserQuery();
+    const data = useSelector((state) => state);
+    console.log("data", data);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (isSuccess) {
+            console.log("user", user);
+            dispatch(setCurrentUser(user));
+        }
+    }, []);
+
+    console.log("user", user);
+
+
     return (
-        <main className="flex flex-col items-center justify-between py-36 gap-5">
-            <section className='flex justify-center items-start '>
+        <main className="flex flex-col items-center justify-between py-36 px-[10%] gap-5">
+            <section className='lg:flex md:flex justify-between items-start'>
                 <div className='lg:w-1/2 sm:w-1/2 w-full flex flex-col justify-between'>
-                    <h1 className='text-text-color font-bold text-[44px]'>
-                        Discover, Analyze and Decide With <p className='text-primary-color'>K-QuickSight</p>
+                    <h1 className='text-text-color font-bold lg:text-[44px] md:text-[25px] text-[25px]'>
+                        Discover, Analyze and Decide With <span className='text-primary-color'>K-QuickSight</span>
                     </h1>
                     <p className='text-description-color text-base mt-[26px] mb-[36px]'>
-                        Catalyze your data journey with our powerful tools for discovery, analysis, and informed decision-making. Explore your data full potential and drive success with confidence.
+                        Catalyze your data, {user?.username} journey with our powerful tools for discovery, analysis, and informed decision-making. Explore your data full potential and drive success with confidence.
                     </p>
                     <div className='flex gap-[21px]'>
                         <Button onClick={() => router.push('/pages/login')} className='text-white px-7 bg-primary-color font-normal'>
@@ -30,7 +56,7 @@ export default function Home() {
                         </Button>
                     </div>
                 </div>
-                <img src={'/asset/first_home_page.png'} alt='homepage' className='w-1/4' />
+                <img src={'/asset/first_home_page.png'} alt='homepage' className='lg:w-1/3 md:w-1/2' />
             </section>
         </main>
     )

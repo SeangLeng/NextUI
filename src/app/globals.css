@@ -17,6 +17,20 @@
   }
 }
 
+@layer components {
+  .pageLayout {
+    padding: 10% 9rem;
+  }
+  
+  .inputStyle {
+    border-radius: 1rem;
+    border-color: var(--primary-color);
+    border-radius: 1rem;
+  }
+
+  /* ... */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
