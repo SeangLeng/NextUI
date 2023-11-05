@@ -1,7 +1,7 @@
 'use client'
 
 import { useGetUserQuery } from '@/store/features/user/userApiSlice';
-import { Button } from '@nextui-org/react'
+import { Button, Input } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,7 +33,7 @@ export default function Home() {
 
 
     return (
-        <main className="flex flex-col items-center justify-between py-36 px-[10%] gap-5">
+        <main className="flex flex-col py-36 px-[10%] gap-5">
             <section className='lg:flex md:flex justify-between items-start'>
                 <div className='lg:w-1/2 sm:w-1/2 w-full flex flex-col justify-between'>
                     <h1 className='text-text-color font-bold lg:text-[44px] md:text-[25px] text-[25px]'>
@@ -57,6 +57,25 @@ export default function Home() {
                     </div>
                 </div>
                 <img src={'/asset/first_home_page.png'} alt='homepage' className='lg:w-1/3 md:w-1/2' />
+            </section>
+            <section>
+                <div className='.pageLayout flex justify-between items-center h-screen'>
+                    <div className='lg:w-1/2 md:1/2 w-full'>
+                        <h2 className='text-center font-semibold text-3xl tracking-widest text-primary-color'>Authentication</h2>
+                        <Input type='number'  classNames={{
+                            input: 
+                            [
+                                "text-center"
+                            ], 
+                            inputWrapper: [
+                                "w-10"
+                            ]
+                        }} />
+                    </div>
+                    <div className='lg:w-1/2 md:1/2 w-full'>
+                        hey
+                    </div>
+                </div>
             </section>
         </main>
     )

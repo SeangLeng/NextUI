@@ -21,12 +21,13 @@
   .pageLayout {
     padding: 10% 9rem;
   }
-  
-  .inputStyle {
-    border-radius: 1rem;
-    border-color: var(--primary-color);
-    border-radius: 1rem;
+
+  .inputStyleWidth {
+    width: 100%;
+    margin-bottom: 2px;
   }
+
+
 
   /* ... */
 }

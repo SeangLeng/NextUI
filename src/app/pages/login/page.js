@@ -48,7 +48,7 @@ export default function LoginQuick() {
             if (!error.response) {
                 console.log("error here chento: " + error.response)
                 console.log(error)
-                router.push("/handle_error")
+                // router.push("/handle_error")
             } else if (error.response.status === 400) {
                 alert("Missing email or password");
             } else if (error.response.status === 403) {
