@@ -3,6 +3,8 @@ import './globals.css'
 import Provider from './provider'
 import NavbarKQuick from '@/components/Navbar'
 import Providers from '@/store/Providers'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,12 +18,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Providers>
         <body className={inter.className}>
-
-          <Provider>
-            <NavbarKQuick />
-            {children}
-          </Provider>
-
+          <Suspense fallback={<Loading />}>
+            <Provider>
+              <NavbarKQuick />
+              {children}
+            </Provider>
+          </Suspense>
         </body>
       </Providers>
     </html>

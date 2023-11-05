@@ -32,9 +32,9 @@ export default function NavbarKQuick() {
     ];
     const router = useRouter()
 
-    const varlidNavPath = ["/pages/login", "/pages/signup"]
+    const validNavPath = ["/pages/login", "/pages/signup", "/handle_error"]
 
-    if (pathname === varlidNavPath[1] || pathname === varlidNavPath[0]) return null; else return (
+    if (validNavPath.includes(pathname)) return null; else return (
         <nav className={"w-full bg-[#FBFBFB] shadow-sm py-[5px] lg:px-[50px] md:px-[10px] px-[10px] flex fixed z-40 justify-between items-center"}>
             <Navbar onMenuOpenChange={setIsMenuOpen} className="w-auto">
                 <NavbarContent>
