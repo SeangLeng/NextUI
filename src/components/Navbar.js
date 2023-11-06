@@ -50,7 +50,7 @@ export default function NavbarKQuick() {
             console.log("user", user);
             dispatch(setCurrentUser(user));
         }
-    }, []);
+    }, [user]);
 
 
     const validNavPath = ["/pages/login", "/pages/signup", "/handle_error"]
