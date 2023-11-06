@@ -7,7 +7,7 @@ export default function CheckAuth() {
     const router = useRouter()
     return (
         <div className="flex flex-col justify-center h-screen items-center p-44 gap-3">
-            <img src={'/asset/maintenance.svg'} className="lg:w-1/3 md:w-2/3" />
+            <img src={'/asset/maintenance.svg'} className="lg:w-1/3 md:w-2/3" alt='auth-check' />
             <h1 className="lg:text-5xl text-text-color text-center md:text-3xl text-2xl font-bold">Under Maintenance</h1>
             <p className="text-lg text-center lg:w-2/3 md:w-2/3 mt-4 text-description-color">Sorry for the inconvenience but we are performing some maintenance at the moment. If you need to you can always <Link href={'/pages/contactus'} className='text-blue-500 font-medium'>contact us</Link>, otherwise we will be back online shortly!.</p>
             <button onClick={() => router.back()} type="button" className="text-white mt-5 flex justify-center items-center gap-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
