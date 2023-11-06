@@ -18,10 +18,13 @@ export function encrypt(message, secretKey) {
 
 // decrypt refresh token
 export function decrypt(ciphertext, secretKey) {
+  let iv = CryptoJS.enc.Base64.parse(ciphertext);
+  let key = CryptoJS.enc.Utf8.parse(secretKey);
   let plaintext = null;
   try {
-    const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey);
-    plaintext = bytes.toString(CryptoJS.enc.Utf8);
+    const decryptedBytes = CryptoJS.AES.decrypt({ ciphertext: iv }, key, { mode: CryptoJS.mode.CBC });
+    plaintext = CryptoJS.enc.Utf8.stringify(decryptedBytes);
+
   } catch (err) {
     console.log("Decrypt secret key error", err);
   }

@@ -74,7 +74,7 @@ export default function LoginQuick() {
                 <h2 className='font-semibold text-text-color text-2xl'>Welcome back!</h2>
                 <Input type="email"
                     isInvalid={isInvalid}
-                    color={isInvalid ? "danger" : "success"}
+                    color={isInvalid ? "danger" : ""}
                     errorMessage={isInvalid && "Please enter a valid email"}
                     onValueChange={setEmail} label="Email" isRequired required variant="bordered" classNames={styleInput} />
                 <Input

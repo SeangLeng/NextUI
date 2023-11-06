@@ -19,8 +19,9 @@ const baseQuery = fetchBaseQuery({
 const baseQueryWithReAuth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
   if (result?.error?.status === 401) {
+    console.log("object not found")
     const refreshToken = await getDecryptedRefreshToken();
-
+    console.log(refreshToken)
     if (refreshToken) {
       try {
         const response = await fetch(

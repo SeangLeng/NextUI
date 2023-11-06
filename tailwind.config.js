@@ -17,7 +17,8 @@ module.exports = {
       colors: {
         "primary-color": "#0346A5",
         "description-color": "#636363",
-        "text-color": "#363636"
+        "text-color": "#363636",
+        "secondary-color": "rgba(31, 130, 243, 0.08)",
       }
     },
   },

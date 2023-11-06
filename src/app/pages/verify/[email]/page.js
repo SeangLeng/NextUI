@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Button } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Verify = ({ params }) => {
     const [verificationCode, setVerificationCode] = useState('');
@@ -37,21 +38,29 @@ const Verify = ({ params }) => {
 
 
     return (
-        <div className="flex justify-center items-center h-screen">
-            <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
-                <h2 className='text-center font-semibold text-3xl text-primary-color tracking-widest m-5'>Authentication</h2>
+        <div className="lg:flex md:flex justify-around items-center h-screen lg:pageLayout md:pageLayout px-5 py-[20%]">
+            <form onSubmit={handleSubmit} className='flex flex-col gap-7 lg:w-1/3 md:w-1/2 w-full'>
+                <h2 className='text-center font-semibold text-3xl text-primary-color tracking-wide m-5'>Authentication</h2>
                 <input
                     type="text"
                     value={verificationCode}
                     onChange={(e) => setVerificationCode(e.target.value)}
-                    className="w-full h-12 text-center border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                    className="w-full h-12 text-center border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500"
                     placeholder="Enter verification code"
                 />
                 {errorMessage && (
                     <div className="text-red-500 mb-4 w-full ">{errorMessage}</div>
                 )}
-                <Button type='submit' className='bg-primary-color py-5 w-full text-white font-normal text-lg'>Register</Button>
+                <Button type='submit' className='bg-primary-color py-6 w-full text-white font-normal text-lg'>Register</Button>
+                <div className='flex justify-center items-center gap-5'>
+                    <div className='h-0.5 bg-gray-600 w-full rounded-xl'></div>
+                    <div>Or</div>
+                    <div className='h-0.5 bg-gray-600 w-full rounded-xl'></div>
+                </div>
+                <Button onClick={() => { router.back() }} type='button' className='backSignup bg-secondary-color text-primary-color py-6 text-lg'>Sign up again</Button>
+                <span className='text-text-color'>Already have an account? <Link href={'/pages/login'} className='text-primary-color font-semibold'>Log-in</Link></span>
             </form>
+            <img src='/asset/5847181.webp' />
         </div>
     );
 };

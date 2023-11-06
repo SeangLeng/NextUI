@@ -33,8 +33,8 @@ export default function Home() {
 
 
     return (
-        <main className="flex flex-col py-36 px-[10%] gap-5">
-            <section className='lg:flex md:flex justify-between items-start'>
+        <main className="flex flex-col justify-around py-20 px-[10%] gap-5">
+            <section className='lg:flex md:flex justify-around items-center'>
                 <div className='lg:w-1/2 sm:w-1/2 w-full flex flex-col justify-between'>
                     <h1 className='text-text-color font-bold lg:text-[44px] md:text-[25px] text-[25px]'>
                         Discover, Analyze and Decide With <span className='text-primary-color'>K-QuickSight</span>
@@ -56,26 +56,7 @@ export default function Home() {
                         </Button>
                     </div>
                 </div>
-                <img src={'/asset/first_home_page.png'} alt='homepage' className='lg:w-1/3 md:w-1/2' />
-            </section>
-            <section>
-                <div className='.pageLayout flex justify-between items-center h-screen'>
-                    <div className='lg:w-1/2 md:1/2 w-full'>
-                        <h2 className='text-center font-semibold text-3xl tracking-widest text-primary-color'>Authentication</h2>
-                        <Input type='number'  classNames={{
-                            input: 
-                            [
-                                "text-center"
-                            ], 
-                            inputWrapper: [
-                                "w-10"
-                            ]
-                        }} />
-                    </div>
-                    <div className='lg:w-1/2 md:1/2 w-full'>
-                        hey
-                    </div>
-                </div>
+                <img src={'/asset/2001.i039.031_branding_isometric_concept_icons-06.jpg'} alt='homepage' className='lg:w-1/2 md:w-1/2' />
             </section>
         </main>
     )
